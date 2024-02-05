@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', init);
 
-// Variables globales
+
 let currentPage = 1; 
 const boardsPerPage = 50; 
 let boards = [];
@@ -19,8 +19,8 @@ function CargarTablas() {
     const boardListElement = document.getElementById('boardList'); // Obtiene el elemento donde se mostrarán los tableros
     boardListElement.innerHTML = ''; 
 
-    const startIndex = (currentPage - 1) * boardsPerPage; // Índice de inicio de la página actual
-    const endIndex = Math.min(startIndex + boardsPerPage, boards.length); // Índice de fin de la página actual
+    const startIndex = (currentPage - 1) * boardsPerPage; 
+    const endIndex = Math.min(startIndex + boardsPerPage, boards.length); 
     const boardsToShow = boards.slice(startIndex, endIndex); // Obtiene los tableros que se mostrarán en la página actual
 
     
@@ -34,7 +34,7 @@ function CargarTablas() {
         boardListElement.appendChild(boardElement); // Agrega el elemento del tablero a la lista de tableros en la página
     });
 
-    updatePaginationControls(); // Actualiza los controles de paginación en la página
+    updatePaginationControls(); 
 }
 
 // Función para cargar la página
@@ -60,7 +60,7 @@ async function CargarPagina() {
         boards = JSON.parse(localStorage.getItem('boardsData'));
         originalBoards = [...boards]; // Realiza una copia de seguridad de los tableros originales con los datos de localStorage
     }
-    CargarTablas(); // Llama a la función para cargar las tablas en la página
+    CargarTablas(); 
 }
 
 
