@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4chan Board Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="scriptsEnrique.js"></script>
+    <script src="scriptsLuis.js"></script>
+    <script src="scriptsMauricio.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/4chan_Logo.png/320px-4chan_Logo.png" alt="Imagen de cabecera">
+    </header>
+    <div id="boardListContainer">
+        <button id="sortTitle">Ordenar por Título</button>
+        <button id="sortThreads">Ordenar por Hilos</button>
+        <input type="text" id="filterInput" placeholder="Filtrar por título...">
+        <button id="resetList">Restablecer Listado</button>
+
+        <div id="boardList"></div>
+
+
+        <button id="AnteriorPagina">Página Anterior</button>
+        <button id="SiguientePagina">Página Siguiente</button>
+    </div>
+
+    <div id="forumDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalDetails"></div>
+            <div class="modal-navigation">
+                <button id="prevForum" class="navigate-prev">Anterior</button>
+                <button id="nextForum" class="navigate-next">Siguiente</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
