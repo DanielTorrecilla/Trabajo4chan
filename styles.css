@@ -1,0 +1,87 @@
+body {
+    font-family: 'Tahoma', sans-serif;
+    background-color: #f0e0d6; 
+    color: #800000; 
+}
+
+#boardListContainer, #boardDetailsContainer {
+    margin: 20px auto; 
+    padding: 10px;
+    border: 2px solid #789922; 
+    background-color: #fafafa; 
+    width: 90%; 
+    max-width: 800px;
+}
+
+#boardList div {
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #c9dda1; 
+    border-bottom: 1px solid #789922; 
+}
+
+#boardList div:hover {
+    background-color: #b9cd91; 
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #789922;
+    width: 60%;
+}
+
+.close {
+    color: #006600; 
+    float: right;
+    font-size: 28px;
+}
+
+.close:hover, .close:focus {
+    color: #004400; 
+}
+
+
+button {
+    background-color: #789922; 
+    color: white; 
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #657917; 
+}
+button:disabled {
+    color: #999999; 
+    background-color: #cccccc; 
+    cursor: not-allowed;
+    border: 1px solid #999999; 
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    align-items: center;
+}
