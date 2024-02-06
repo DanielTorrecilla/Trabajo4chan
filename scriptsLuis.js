@@ -65,3 +65,48 @@ async function CargarPagina() {
 
 
 
+// Función para ir a la página siguiente
+function SiguientePagina() {
+    if (currentPage < Math.ceil(boards.length / boardsPerPage)) {
+        currentPage++; // Incrementa la página actual
+        CargarTablas(); // Carga las tablas de la nueva página
+        scrollToTop();
+    }
+}
+
+// Función para ir a la página anterior
+function AnteriorPagina() {
+    if (currentPage > 1) {
+        currentPage--; // Decrementa la página actual
+        CargarTablas(); // Carga las tablas de la nueva página
+        scrollToTop();
+    }
+}
+
+// Función para configurar event listeners
+function setupEventListeners() {
+    document.getElementById('sortTitle').addEventListener('click', ordenarPorTitulo); // Configura el evento de clic para ordenar por título
+    document.getElementById('sortThreads').addEventListener('click', ordenarPorHilos); // Configura el evento de clic para ordenar por hilos
+    document.getElementById('filterInput').addEventListener('input', filtrarPorTitulo); // Configura el evento de entrada para filtrar por título
+    document.getElementById('resetList').addEventListener('click', resetearListado); // Configura el evento de clic para restablecer el listado
+    document.getElementById('SiguientePagina').addEventListener('click', SiguientePagina); // Configura el evento de clic para ir a la página siguiente
+    document.getElementById('AnteriorPagina').addEventListener('click', AnteriorPagina); // Configura el evento de clic para ir a la página anterior
+}
+
+// Función para actualizar los controles de paginación en la página
+function updatePaginationControls() {
+    const totalPages = Math.ceil(boards.length / boardsPerPage); // Calcula el total de páginas
+    const anteriorPaginaButton = document.getElementById('AnteriorPagina'); // Obtiene el botón de página anterior
+    const siguientePaginaButton = document.getElementById('SiguientePagina'); // Obtiene el botón de página siguiente
+
+    // Desactivar el botón de página anterior si estamos en la primera página
+    anteriorPaginaButton.disabled = currentPage === 1;
+
+    // Desactivar el botón de página siguiente si estamos en la última página
+    siguientePaginaButton.disabled = currentPage >= totalPages;
+}
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+
