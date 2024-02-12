@@ -42,3 +42,19 @@ function MostrarDetallesForo(index) {
         }
     }
 }
+
+// Función para configurar la navegación entre tableros en el modal
+function setupModalNavigation() {
+    // Configura los eventos de clic para los botones "Anterior" y "Siguiente" en el modal
+    document.getElementById('prevForum').addEventListener('click', () => {
+        if (currentBoardIndex > 0) {
+            MostrarDetallesForo(currentBoardIndex - 1); // Muestra los detalles del tablero anterior
+        }
+    });
+
+    document.getElementById('nextForum').addEventListener('click', () => {
+        if (currentBoardIndex < boards.length - 1) {
+            MostrarDetallesForo(currentBoardIndex + 1); // Muestra los detalles del tablero siguiente
+        }
+    });
+}
